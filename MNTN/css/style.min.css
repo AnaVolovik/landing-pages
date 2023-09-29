@@ -1,0 +1,534 @@
+@charset "UTF-8";
+/* MAIN STYLES */
+/* NULL */
+@import url("https://fonts.cdnfonts.com/css/chronicle-display");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+@font-face {
+  font-family: "Gilroy";
+  src: url("Gilroy-ExtraBold.eot");
+  src: local("Gilroy ExtraBold"), local("Gilroy-ExtraBold"), url("Gilroy-ExtraBold.eot?#iefix") format("embedded-opentype"), url("Gilroy-ExtraBold.woff") format("woff"), url("Gilroy-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("Gilroy-Bold.eot");
+  src: local("Gilroy Bold"), local("Gilroy-Bold"), url("Gilroy-Bold.eot?#iefix") format("embedded-opentype"), url("Gilroy-Bold.woff") format("woff"), url("Gilroy-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("Gilroy-Medium.eot");
+  src: local("Gilroy Medium"), local("Gilroy-Medium"), url("Gilroy-Medium.eot?#iefix") format("embedded-opentype"), url("Gilroy-Medium.woff") format("woff"), url("Gilroy-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+/* ПЕРЕМЕННЫЕ */
+/* ==================================== */
+/* ОБЩИЕ ПАРАМЕТРЫ | ОБОЛОЧКА | ОСН. СЕТКА */
+html {
+  overflow-x: hidden;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  html * :hover {
+    transition: all 0.3s ease 0s;
+  }
+}
+
+.wrapper {
+  max-width: 1920px;
+  min-height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #0B1D26;
+  position: relative;
+}
+
+._container-head {
+  max-width: 1760px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+._container {
+  max-width: 1462px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  margin: 0 auto;
+}
+
+.head {
+  background: url("../img/bg.png") center center/100% no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.hide {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.show {
+  opacity: 1;
+  transition: opacity 1s;
+  transform: translateY(0%);
+}
+
+/* ==================================== */
+/*  ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ, ГОТОВЫХ КЛАССОВ */
+/* UI and ELEMENTS */
+.text-logo {
+  font-family: "Chronicle Display", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.32px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.text {
+  font-family: "Gilroy", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  font-style: normal;
+  color: #FFFFFF;
+}
+
+.link-menu:hover {
+  color: #FBD784;
+}
+
+.subtitle {
+  font-family: "Gilroy", sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  font-style: normal;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: #FBD784;
+  display: flex;
+  align-items: center;
+}
+.subtitle span {
+  display: inline-block;
+}
+
+.line {
+  display: inline-block;
+  width: 72px;
+  height: 2px;
+  margin-right: 32px;
+  background-color: #FBD784;
+}
+
+.headline {
+  font-family: "Chronicle Display", sans-serif;
+  font-size: 64px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+/* ==================================== */
+/* ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ */
+/* HEADER */
+.header {
+  padding: 64px 0 20px 0;
+}
+.header__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.3s ease 0s;
+}
+@media (min-width: 1400px) {
+  .header__link:hover > .header__text,
+  .header__link:hover .header__icon {
+    color: #FBD784;
+  }
+  .header__link:hover > .header__text path,
+  .header__link:hover .header__icon path {
+    fill: #FBD784;
+    transition: all 0.3s ease 0s;
+  }
+}
+
+.menu__list {
+  display: flex;
+}
+.menu__list li:not(:last-child) {
+  padding-right: 40px;
+}
+
+.slider {
+  position: fixed;
+  top: 330px;
+  right: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 70px;
+  z-index: 500;
+}
+.slider__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.slider__nav li:not(:last-child) {
+  padding-bottom: 40px;
+}
+.slider__name {
+  text-align: right;
+  padding-top: 16px;
+  cursor: default;
+}
+.slider__name:hover {
+  color: #FBD784;
+}
+.slider__item {
+  text-align: right;
+  cursor: default;
+}
+.slider__item:hover {
+  color: #FBD784;
+}
+.slider__progressbar {
+  position: relative;
+  width: 3px;
+  height: 300px;
+  background-color: #FBD784;
+}
+.slider__line {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.start {
+  position: relative;
+  padding: 180px 0 1300px 0;
+}
+.start__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.start__socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.start__follow {
+  writing-mode: vertical-rl;
+}
+.start__link {
+  display: inline-block;
+  transition: all 0.3s ease 0s;
+}
+.start__link:hover svg path {
+  fill: #FBD784;
+  transition: all 0.3s ease 0s;
+}
+.start__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.start__subtitle {
+  padding-bottom: 32px;
+}
+.start__title {
+  width: 980px;
+  padding-bottom: 32px;
+  font-family: "Chronicle Display", sans-serif;
+  font-size: 88px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 100px;
+  text-transform: capitalize;
+  color: #FFFFFF;
+}
+.start__scroll {
+  display: flex;
+  align-items: center;
+}
+.start__scroll:hover > .start__text {
+  color: #FBD784;
+}
+.start__scroll:hover svg path {
+  fill: #FBD784;
+  transition: all 0.3s ease 0s;
+}
+.start__text {
+  padding-right: 20px;
+  cursor: default;
+}
+.start__column {
+  width: 70px;
+  height: 0px;
+  visibility: hidden;
+}
+
+.articles__number {
+  position: absolute;
+  top: -140px;
+  left: -156px;
+  z-index: 50;
+  font-family: "Gilroy", sans-serif;
+  font-size: 240px;
+  font-weight: bold;
+  line-height: 240px;
+  color: #FFFFFF;
+  opacity: 0.1;
+}
+.articles__text {
+  line-height: 32px;
+}
+.articles__link {
+  display: inline-flex;
+  font-family: "Gilroy", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: normal;
+  color: #FBD784;
+  display: flex;
+  align-items: center;
+}
+.articles__link span {
+  display: inline-block;
+}
+.articles__link :first-child {
+  margin-right: 16px;
+}
+@media (min-width: 1400px) {
+  .articles__link:hover {
+    color: #FFFFFF;
+    transition: none;
+  }
+  .articles__link:hover svg path {
+    fill: #FFFFFF;
+    transition: all 0.1s ease 0s;
+  }
+}
+.articles__image {
+  flex: 1 0 auto;
+  width: 556px;
+  height: 720px;
+}
+.articles__image img {
+  max-width: 100%;
+}
+
+.level {
+  position: relative;
+  margin: 0px 20px 200px 20px;
+}
+.level__content {
+  position: absolute;
+  top: -510px;
+  left: 0;
+  display: flex;
+  align-items: center;
+}
+.level__info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  margin-right: 104px;
+  margin-left: 150px;
+  z-index: 100;
+}
+
+.gear {
+  margin: 0 auto;
+  padding-top: 200px;
+}
+.gear__content {
+  display: flex;
+  align-items: center;
+}
+.gear__info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  margin-left: 260px;
+  z-index: 100;
+}
+
+.map {
+  margin: 0 auto;
+  padding-top: 200px;
+}
+.map__content {
+  display: flex;
+  align-items: center;
+}
+.map__info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  margin-right: 104px;
+  margin-left: 150px;
+  z-index: 100;
+}
+
+.footer {
+  margin: 200px 0 120px 0;
+}
+.footer__content {
+  display: flex;
+  align-items: flex-start;
+}
+.footer__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex: 1 1 auto;
+  height: 280px;
+}
+.footer__head {
+  margin-bottom: 20px;
+}
+.footer__logo {
+  padding-bottom: 24px;
+}
+.footer__title {
+  width: 300px;
+  line-height: 32px;
+}
+.footer__copyright {
+  font-family: "Gilroy", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 32px;
+  color: #FFFFFF;
+  opacity: 0.5;
+}
+.footer__menu {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 556px;
+}
+.footer__list li:not(:last-child) {
+  padding-bottom: 16px;
+}
+.footer__name {
+  padding-bottom: 24px;
+  font-family: "Gilroy", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 32px;
+  color: #FBD784;
+}
+.footer__link {
+  font-family: "Gilroy", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 32px;
+  color: #FFFFFF;
+}
+
+/* ==================================== */
